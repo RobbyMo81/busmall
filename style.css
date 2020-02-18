@@ -1,0 +1,42 @@
+body{
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  width: 1500px;
+  height: 2000px;
+}
+main{
+  vertical-align: auto;
+  margin: 0px auto;
+  padding: 0px;
+  border: 0px;
+  width: 1200px;
+  height: 600px;
+
+  
+  
+}
+:root {
+  --div-color: #FFB6C1;
+
+}
+
+div{
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  border: 1px solid;
+  background-color: var(--div-color);
+
+}
+img{
+  height: 210px;
+  float: left;
+  display: inline-table;
+  padding: 10px;
+  border-radius: 0px 40px 0px 40px;
+  border: groove;
+  margin: 30px 10px 0px 0px;
+  background-color:rgb(200,200,200);
+  
+}
