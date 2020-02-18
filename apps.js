@@ -113,7 +113,7 @@
    allBusmallProducts[prodImgIndex3].timesRendered++;
    
 
-
+   //clickedImage.addEventListener
 
 
 

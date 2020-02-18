@@ -3,7 +3,7 @@ body{
   padding: 0px;
   border: 0px;
   width: 1500px;
-  height: 2000px;
+  height: 1000px;
 }
 main{
   vertical-align: auto;
@@ -39,4 +39,19 @@ img{
   margin: 30px 10px 0px 0px;
   background-color:rgb(200,200,200);
   
+}
+h1, p{
+  text-align: center;
+}
+h1 {
+  font-family: 'Lacquer', sans-serif;
+  font-family: 'Pacifico', cursive;
+}
+span{
+  color: blueviolet;
+}
+
+P{
+  font-family: 'Lacquer', sans-serif;
+  color: rgb (200,10,33);
 }
