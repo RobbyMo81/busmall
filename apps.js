@@ -200,10 +200,10 @@ thirdImg.addEventListener('click', onClick);
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-          labels: allNames(),
+          labels: busmallArr().allNames,
           datasets: [{
               label: '# of Votes',
-              data: allClicks(),
+              data: busmallArr().allClicks,
               backgroundColor: [
                   'rgba(255, 99, 132, 0.2)',
                   'rgba(54, 162, 235, 0.2)',
@@ -224,7 +224,7 @@ thirdImg.addEventListener('click', onClick);
           }],
           datasets: [{
             label: '# of Votes',
-            data: allRendered(),
+            data: busmallArr().allRendered,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
