@@ -4,6 +4,7 @@ body{
   border: 0px;
   width: 1500px;
   height: 1000px;
+  
 }
 main{
   vertical-align: auto;
@@ -31,6 +32,7 @@ div{
 }
 img{
   height: 210px;
+  width: calc(90% - 1000);
   float: left;
   display: inline-table;
   padding: 10px;
@@ -54,4 +56,10 @@ span{
 P{
   font-family: 'Lacquer', sans-serif;
   color: rgb (200,10,33);
+}
+label input{
+  float: right;
+  text-align: right;
+  position: relative;
+
 }
