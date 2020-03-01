@@ -36,11 +36,6 @@ var allRendered = [];
 var allNames = [];
 
 
-
-
-
-////////////////render fun
-
 /////////////Bus Mall Constructor///////////////////
 function BusmallProducts(name, imagePath) {
   this.name = name;
@@ -74,16 +69,9 @@ new BusmallProducts('Tauntaun', './img/tauntaun.jpg');
 new BusmallProducts('Unicorn', './img/unicorn.jpg');
 new BusmallProducts('Usb', './img/usb.gif');
 new BusmallProducts('Water-can', './img/water-can.jpg');
+new BusmallProducts('wine-glass', './img/wine-glass.jpg');
+new BusmallProducts('favicon', './img/favicon.png');
 
-
-
-
-//  firstImg.src = allBusmallProducts[0].image;
-//  firstImg.alt = allBusmallProducts[0].name;
-//  seconImg.src = allBusmallProducts[1].image;
-//  seconImg.alt = allBusmallProducts[1].name;
-//  thirdImg.src = allBusmallProducts[2].image;
-//  thirdImg.alt = allBusmallProducts[2].name;
 
 
 
@@ -136,12 +124,11 @@ function onClick(event) {
     busmallArr();
     allVotes();
     myChart();
-    render();
-    console.log('this is all clicks ' +allClicks);
-    console.log('this is allRendered ' +allRendered);
-    console.log('this is allNames ' +allNames);
+    
+    
     
   }
+  render();
 }////////////////end of onClick function//////////////
 
 ///////// Ron and Iris helped me with function ////////////
@@ -163,20 +150,21 @@ busmallArr();
 ///console.log(allClicks);
 
 function allVotes(){
-  var storedLocalVotes; 
+  var storedLocalVotes;
+  var allVotes; 
   storedLocalVotes = localStorage.getItem('BusmallProducts');
    if (storedLocalVotes !== null){
-     var locallyStoredData = JSON.parse(storedLocalVotes);
+     allVotes = JSON.parse(storedLocalVotes);
 
      for (var i = 0; i < allBusmallProducts.length; i++) {
       
-       allBusmallProducts[i].timesClicked = allBusmallProducts[i].timesClicked + locallyStoredData[i].timesClicked;
-       allBusmallProducts[i].timesRendered = allBusmallProducts[i].timesClicked + locallyStoredData[i].timesRendered;
+       allBusmallProducts[i].timesClicked = allBusmallProducts[i].timesClicked + allVotes[i].timesClicked;
+       allBusmallProducts[i].timesRendered = allBusmallProducts[i].timesRendered + allVotes[i].timesRendered;
      }
 
    }
- locallyStoredData = JSON.stringify(allBusmallProducts);
- localStorage.setItem('BusmallProducts', locallyStoredData);
+ allVotes = JSON.stringify(allBusmallProducts);
+ localStorage.setItem('BusmallProducts', allVotes);
 }
 
 
@@ -184,14 +172,14 @@ function allVotes(){
 function render() {
   ///////produces the random pictures using the getRandomImgs Math function////////
   var prodImgIndex1 = getRandomImgs();
-  renderProdImg1 = allBusmallProducts[prodImgIndex1].name;
+  renderProdImg1 = allBusmallProducts[prodImgIndex1].image;
   //renderProdImg1 = allBusmallProducts[prodImgIndex1].image;
 
   var prodImgIndex2 = getRandomImgs();
-  renderProdImg2 = allBusmallProducts[prodImgIndex2].name;
+  renderProdImg2 = allBusmallProducts[prodImgIndex2].image;
 
   var prodImgIndex3 = getRandomImgs();
-  renderProdImg3 = allBusmallProducts[prodImgIndex3].name;
+  renderProdImg3 = allBusmallProducts[prodImgIndex3].image;
   ///////////////////////line above produces the random pictures/////////////
 
 /////////////line below will make the ul list after all votes are completed. reference line 29 of html id/////////
@@ -199,9 +187,25 @@ function render() {
   statsList.appendChild(item);
   item.textContent = (allClicks + allNames + allRendered);
 
-  console.log (item.textContent);
+  //console.log (item.textContent);
 
   //////////////////////////////////////////////////////////////////////
+
+  ////////////////////////////////////////
+
+// function msgToUser(){
+//   var item = document.createElement('li');
+//   var userDisplay = null;
+  
+//   for (var i =0; i = allBusmallProducts.length; i++){
+//     userDisplay = '';
+//     userDisplay = allNames[i] + ' had ' + allClicks[i];
+//     userDisplay = userDisplay + ' votes and shown ' + allRendered[i];
+//     item.textContent = userDisplay
+//     statsList.appendChild(item);
+
+//   }
+// }
 
   
 
